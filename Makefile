@@ -9,7 +9,7 @@ epubs: epub-en
 	-rm -rf en/img/
 
 epub-en: copyimg out pandoc metadata.xml
-	$(DOCGEN) $(DOCGEN_FLAGS) --epub-metadata=metadata.xml -o out/lyah-en.epub --epub-cover-image=img/lyah.jpg title.txt $(addprefix en/, $(FILES))
+	$(DOCGEN) $(DOCGEN_FLAGS) --epub-metadata=metadata.xml --epub-stylesheet=epub-stylesheet.css -o out/lyah-en.epub --epub-cover-image=img/lyah.jpg title.txt $(addprefix en/, $(FILES))
 
 pdfs: pdf-en
 
